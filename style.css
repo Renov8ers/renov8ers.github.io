@@ -379,3 +379,32 @@ footer.site{background:#0b0e12;color:#cfd6de;padding:64px 0 34px;margin-top:0}
 .form-ok .big{font-size:44px;margin-bottom:10px}
 .form-ok h3{font-size:22px;margin-bottom:8px}
 .form-ok p{color:var(--muted);font-size:15.5px}
+
+/* ---------- automated estimate questionnaire ---------- */
+.qdots{display:flex;gap:8px;margin-bottom:22px}
+.qd{height:6px;flex:1;border-radius:99px;background:#e3e7ec;transition:.3s}
+.qd.active{background:var(--amber)}
+.qd.done{background:var(--amber-deep)}
+.qstep{display:none}
+.qstep.active{display:block;animation:qin .35s ease}
+@keyframes qin{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.qtitle{font-size:19px;margin-bottom:18px}
+.hint{font-weight:400;color:var(--muted);font-size:13px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.frow{grid-template-columns:1fr}}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.qgrid{grid-template-columns:1fr}}
+.qchk{display:block;cursor:pointer}
+.qchk input{position:absolute;opacity:0;pointer-events:none}
+.qchk span{display:block;padding:13px 16px;border:1.5px solid #dfe3e9;border-radius:12px;font-size:14.5px;font-weight:600;color:var(--ink);transition:.18s;background:#fff}
+.qchk span::before{content:"☐ ";color:var(--muted)}
+.qchk input:checked+span{border-color:var(--amber-deep);background:var(--amber-soft);box-shadow:0 2px 10px rgba(217,135,19,.18)}
+.qchk input:checked+span::before{content:"☑ ";color:var(--amber-deep)}
+.qchk input:focus-visible+span{outline:2px solid var(--amber-deep);outline-offset:2px}
+.qnav{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
+.qnav .btn{flex:1}
+.btn-ghost{background:#eef1f5;color:var(--ink)}
+.btn-ghost:hover{background:#e2e7ee}
+.filelist{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.filechip{font-size:13px;background:var(--amber-soft);border:1px solid rgba(217,135,19,.35);color:#7a5410;padding:6px 12px;border-radius:99px;font-weight:600}
+input[type="file"].form-file{padding:12px}
