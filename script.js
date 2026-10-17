@@ -88,7 +88,7 @@
     }, 2800);
   }
 
-  /* ---- SMS estimate form ---- */
+  /* ---- SMS estimate form (via Renov8ers engine when reachable) ---- */
   var form = document.getElementById('est-form');
   if (form) {
     form.addEventListener('submit', function(e){
@@ -97,12 +97,42 @@
       var town = document.getElementById('f-town').value.trim();
       var type = document.getElementById('f-type').value;
       var details = document.getElementById('f-details').value.trim();
-      var msg = 'Hi Renov8ers! I\'d like a free estimate.\n'
+      var smsBody = 'Hi Renov8ers! I\'d like a free estimate.\n'
         + 'Name: ' + name + '\n'
         + 'Town: ' + town + '\n'
         + 'Project: ' + type
         + (details ? '\nDetails: ' + details : '');
-      window.location.href = 'sms:+15169868621?&body=' + encodeURIComponent(msg);
+
+      function viaSms(){
+        window.location.href = 'sms:+15169868621?&body=' + encodeURIComponent(smsBody);
+      }
+      function viaEngine(){
+        form.innerHTML = '<div class="form-ok"><div class="big">✅</div>'
+          + '<h3>Request received!</h3>'
+          + '<p>Thanks ' + name.split(' ')[0] + ' — your request is in our dispatch engine. '
+          + 'We\'ll be in touch shortly at a real, honest number.</p></div>';
+        window.scrollTo({top: form.offsetTop - 120, behavior: 'smooth'});
+      }
+
+      var urls = (window.R8_ENGINE_URLS || []).filter(function(u){ return !!u; });
+      var i = 0;
+      function tryNext(){
+        if (i >= urls.length) { viaSms(); return; }
+        var url = urls[i++].replace(/\/$/, '');
+        var ctrl = new AbortController();
+        var to = setTimeout(function(){ ctrl.abort(); }, 3000);
+        /* text/plain avoids a CORS preflight; the engine parses the JSON body */
+        fetch(url + '/api/renov8ers', {
+          method: 'POST',
+          headers: {'Content-Type': 'text/plain'},
+          body: JSON.stringify({action: 'site-lead', name: name, town: town,
+                                type: type, details: details, source: 'website'}),
+          signal: ctrl.signal
+        }).then(function(r){ clearTimeout(to); return r.json(); })
+          .then(function(j){ (j && j.ok) ? viaEngine() : tryNext(); })
+          .catch(function(){ clearTimeout(to); tryNext(); });
+      }
+      tryNext();
     });
   }
 })();

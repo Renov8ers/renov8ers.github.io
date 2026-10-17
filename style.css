@@ -365,3 +365,17 @@ footer.site{background:#0b0e12;color:#cfd6de;padding:64px 0 34px;margin-top:0}
   .hero-bg img,.hero-in>*,.ticker-track,.ba-knob::after{animation:none!important}
   .hero-in>*{opacity:1}
 }
+
+/* text-only service block (no photo available — honest, no stock) */
+.svc-block.solo{grid-template-columns:1fr;background:linear-gradient(135deg,#141a21,#202a36);border-color:#0b0e12}
+.svc-block.solo .tx h3{color:#fff}
+.svc-block.solo .tx p{color:var(--muted-d)}
+.svc-block.solo .tx li{color:#dfe5ec}
+.svc-block.solo .note{margin-top:20px;font-size:14px;color:var(--muted-d);border-top:1px solid rgba(255,255,255,.14);padding-top:16px}
+.svc-block.solo .note::before{content:"📸 "}
+
+/* engine confirmation state */
+.form-ok{background:var(--amber-soft);border:1.5px solid rgba(217,135,19,.4);border-radius:14px;padding:34px 28px;text-align:center}
+.form-ok .big{font-size:44px;margin-bottom:10px}
+.form-ok h3{font-size:22px;margin-bottom:8px}
+.form-ok p{color:var(--muted);font-size:15.5px}
