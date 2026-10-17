@@ -32,6 +32,7 @@
     fitClip(ba);
     setBA(ba, parseFloat(range.value) || 50);
     range.addEventListener('input', function(){ setBA(ba, parseFloat(range.value)); });
+    range.addEventListener('pointerdown', function(){ ba.classList.add('touched'); });
     /* drag anywhere on the image */
     var dragging = false;
     function pctFromEvent(e){
@@ -66,6 +67,25 @@
     document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   } else {
     document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---- ticker loop (duplicate content for seamless scroll) ---- */
+  var tick = document.getElementById('ticker-track');
+  if (tick) tick.innerHTML += tick.innerHTML;
+
+  /* ---- rotating hero specialty ---- */
+  var rotWords = ['Masonry & Tile','Kitchens & Baths','Siding & Insulation','Paver Driveways','Outdoor Kitchens','Full Remodels'];
+  var rotEl = document.getElementById('rotword');
+  if (rotEl) {
+    var ri = 0;
+    setInterval(function(){
+      rotEl.classList.add('rot-out');
+      setTimeout(function(){
+        ri = (ri + 1) % rotWords.length;
+        rotEl.textContent = rotWords[ri];
+        rotEl.classList.remove('rot-out');
+      }, 320);
+    }, 2800);
   }
 
   /* ---- SMS estimate form ---- */
