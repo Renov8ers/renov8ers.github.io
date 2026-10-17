@@ -408,3 +408,8 @@ footer.site{background:#0b0e12;color:#cfd6de;padding:64px 0 34px;margin-top:0}
 .filelist{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .filechip{font-size:13px;background:var(--amber-soft);border:1px solid rgba(217,135,19,.35);color:#7a5410;padding:6px 12px;border-radius:99px;font-weight:600}
 input[type="file"].form-file{padding:12px}
+
+/* inline form errors */
+.qerr{display:none;background:#fdeceb;border:1.5px solid #f0a3a3;color:#a93226;font-size:14.5px;font-weight:600;padding:13px 17px;border-radius:12px;margin-bottom:18px}
+.qerr.show{display:block;animation:qin .3s ease}
+.field input.invalid,.field select.invalid{border-color:#e05252;box-shadow:0 0 0 3px rgba(224,82,82,.16)}

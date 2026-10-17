@@ -104,20 +104,49 @@
       form.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
     function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+    function setErr(msg){
+      var e = document.getElementById('qerr');
+      if (!e) return;
+      e.textContent = msg || '';
+      e.classList.toggle('show', !!msg);
+    }
+    function flag(ids, bad){
+      ids.forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.classList.toggle('invalid', bad.indexOf(id) !== -1);
+      });
+    }
+    form.querySelectorAll('input, select, textarea').forEach(function(el){
+      el.addEventListener('input', function(){ el.classList.remove('invalid'); setErr(''); });
+      el.addEventListener('change', function(){ el.classList.remove('invalid'); });
+    });
     function validStep(n){
+      setErr('');
       if (n === 1) {
-        var ok = val('f-name') && val('f-phone') && val('f-town') && /.+@.+\..+/.test(val('f-email'));
-        if (!ok) alert('Please fill in your name, phone, town, and a valid email.');
-        return !!ok;
+        var ids = ['f-name', 'f-phone', 'f-town', 'f-email'];
+        var bad = [];
+        if (!val('f-name')) bad.push('f-name');
+        if (!val('f-phone')) bad.push('f-phone');
+        if (!val('f-town')) bad.push('f-town');
+        if (!/.+@.+\..+/.test(val('f-email'))) bad.push('f-email');
+        flag(ids, bad);
+        if (bad.length) { setErr('Please fill in your name, phone, town, and a valid email — highlighted fields need attention.'); return false; }
+        return true;
       }
       if (n === 2) {
         var sq = parseFloat(val('f-sqft'));
-        if (!(sq >= 200 && sq <= 20000)) { alert('Please enter an approximate square footage.'); return false; }
+        var el = document.getElementById('f-sqft');
+        if (!(sq >= 200 && sq <= 20000)) {
+          el.classList.add('invalid');
+          setErr('Please enter an approximate square footage (200 – 20,000).');
+          return false;
+        }
+        el.classList.remove('invalid');
         return true;
       }
       if (n === 3) {
         var jobs = form.querySelectorAll('#f-jobs input:checked');
-        if (!jobs.length) { alert('Pick at least one project you\'re interested in.'); return false; }
+        if (!jobs.length) { setErr('Pick at least one project you\'re interested in.'); return false; }
         return true;
       }
       return true;
