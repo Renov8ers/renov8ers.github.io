@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay Your Invoice | Renov8ers — Long Island NY</title>
+<meta name="description" content="Pay your Renov8ers invoice online securely through Stripe.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Renov8ers">
+<meta property="og:title" content="Pay Your Invoice | Renov8ers">
+<meta property="og:description" content="Pay your Renov8ers invoice online securely through Stripe.">
+<meta property="og:url" content="https://renov8ers.github.io/pay.html">
+<meta property="og:image" content="https://renov8ers.github.io/assets/siding-after.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html" aria-label="Renov8ers home">
+      <img class="brand-mark" src="assets/logo.png" alt="Renov8ers logo">
+      <span class="brand-name">RENOV8ERS<small>LONG ISLAND · NY</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+      <a class="nl" href="index.html">Home</a>
+      <a class="nl" href="services.html">Services</a>
+      <a class="nl" href="work.html">Our Work</a>
+      <a class="nl" href="contact.html">Contact</a>
+      <a class="btn btn-amber btn-sm" href="tel:+15169868621">📞 (516) 986-8621</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Secure payment</span>
+    <h1>Pay your <span style="color:var(--amber)">invoice.</span></h1>
+    <p>Fast, secure online payment through Stripe. Your invoice link takes you straight here.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap" style="max-width:640px">
+    <div class="form rv" id="pay-box">
+      <div id="pay-loading">
+        <h3 style="font-size:22px;margin-bottom:8px">Loading your invoice…</h3>
+        <p style="color:var(--muted)">One moment.</p>
+      </div>
+      <div id="pay-invoice" style="display:none">
+        <span class="eyebrow">Invoice <span id="inv-id"></span></span>
+        <h3 style="font-size:26px;margin:8px 0 4px" id="inv-title"></h3>
+        <p style="color:var(--muted);font-size:15px" id="inv-desc"></p>
+        <div class="pay-amount"><span>Amount due</span><b id="inv-amount"></b></div>
+        <a class="btn btn-amber" id="inv-paybtn" href="#" style="width:100%;margin-top:22px;font-size:18px">🔒 Pay securely with Stripe</a>
+        <p class="fine" style="margin-top:14px">You'll complete payment on Stripe's secure checkout. Renov8ers LLC never sees or stores your card number.</p>
+      </div>
+      <div id="pay-manual" style="display:none">
+        <h3 style="font-size:22px;margin-bottom:8px">Find your invoice</h3>
+        <p style="color:var(--muted);font-size:15px;margin-bottom:18px">Enter the invoice ID from your text or email (looks like <b>inv-a1b2c3d4e5</b>).</p>
+        <div class="field">
+          <label for="inv-input">Invoice ID</label>
+          <input id="inv-input" type="text" placeholder="inv-…" autocomplete="off">
+        </div>
+        <div class="qerr" id="pay-err" role="alert"></div>
+        <button class="btn btn-amber" id="inv-lookup" style="width:100%">Look up invoice</button>
+        <p class="fine" style="margin-top:14px">No invoice ID? Text us at <a href="sms:+15169868621" style="color:var(--amber-deep);font-weight:700">(516) 986-8621</a> and we'll sort it out.</p>
+      </div>
+    </div>
+
+    <div class="rv" style="margin-top:44px">
+      <div class="band">
+        <div>
+          <h3>Booking the $50 walk-around?</h3>
+          <p>Pay for your deep ROI walk-around here — top-8 value-raising upgrades mapped for your home.</p>
+        </div>
+        <a class="btn btn-amber" href="https://buy.stripe.com/9B6eVeadI24T0Ur9dG7ok02">Pay $50 walk-around →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Renov8ers</h4>
+        <p>Interior &amp; exterior home renovations across eastern Nassau and Suffolk County, NY. Vetted contractors in every trade — organized, dispatched, and done right.</p>
+        <p style="margin-top:14px"><a class="foot-call" href="tel:+15169868621">(516) 986-8621</a></p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="work.html">Our Work</a>
+        <a href="contact.html">Contact &amp; Free Estimate</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="services.html">Kitchens &amp; Bathrooms</a>
+        <a href="services.html">Masonry &amp; Tile</a>
+        <a href="services.html">Siding &amp; Insulation</a>
+        <a href="services.html">Pavers &amp; Outdoor Living</a>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:20px;margin-bottom:20px;font-size:13.5px;color:#7d8794">All work shown performed by Renov8ers LLC approved contractors <b style="color:#aeb7c2">James Sodaro</b> and <b style="color:#aeb7c2">Barry Viola</b> of Curb Appeal Masonry of LI.</div>
+    <div class="foot-bottom">
+      <span>© 2026 RENOV8ERS LLC · DBA Renov8ers · Registered in New York, July 2026</span>
+      <span>Eastern Nassau &amp; Suffolk County, NY</span>
+    </div>
+  </div>
+</footer>
+
+<script src="engine-config.js?v=2"></script>
+<script src="script.js?v=3"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var invId = (params.get('inv') || '').trim();
+  var box = document.getElementById('pay-box');
+
+  function show(id){
+    ['pay-loading','pay-invoice','pay-manual'].forEach(function(x){
+      document.getElementById(x).style.display = (x === id) ? '' : 'none';
+    });
+  }
+  function err(msg){
+    var e = document.getElementById('pay-err');
+    e.textContent = msg; e.classList.add('show');
+  }
+  function render(inv){
+    if (!inv || !inv.payment_url) { show('pay-manual'); err('That invoice has no payment link yet — text us and we\u2019ll send it.'); return; }
+    document.getElementById('inv-id').textContent = inv.id;
+    document.getElementById('inv-title').textContent = inv.job_title || 'Home renovation';
+    document.getElementById('inv-desc').textContent = inv.description || '';
+    document.getElementById('inv-amount').textContent = '$' + (inv.amount_cents/100).toLocaleString('en-US', {minimumFractionDigits: 2});
+    document.getElementById('inv-paybtn').href = inv.payment_url;
+    show('pay-invoice');
+  }
+  function lookup(id){
+    var urls = (window.R8_ENGINE_URLS || []).filter(Boolean);
+    (function tryNext(i){
+      if (i >= urls.length) { show('pay-manual'); err('Could not reach our system — check the invoice ID or text (516) 986-8621.'); return; }
+      var ctrl = new AbortController();
+      var to = setTimeout(function(){ ctrl.abort(); }, 8000);
+      fetch(urls[i].replace(/\/$/,'') + '/api/renov8ers', {
+        method: 'POST', headers: {'Content-Type': 'text/plain'},
+        body: JSON.stringify({action: 'job-invoice-get', invoice_id: id}),
+        signal: ctrl.signal
+      }).then(function(r){ clearTimeout(to); return r.json(); })
+        .then(function(j){ (j && j.invoice) ? render(j.invoice) : (show('pay-manual'), err('Invoice not found — check the ID and try again.')); })
+        .catch(function(){ clearTimeout(to); tryNext(i+1); });
+    })(0);
+  }
+
+  document.getElementById('inv-lookup').addEventListener('click', function(){
+    var v = document.getElementById('inv-input').value.trim();
+    if (!v) { err('Enter your invoice ID first.'); return; }
+    document.getElementById('pay-err').classList.remove('show');
+    show('pay-loading');
+    lookup(v);
+  });
+
+  if (invId) lookup(invId); else show('pay-manual');
+})();
+</script>
+<div class="callbar">
+  <a class="call" href="tel:+15169868621">📞 Call now</a>
+  <a class="text" href="sms:+15169868621?&body=Hi%20Renov8ers!%20I%27d%20like%20a%20free%20estimate.">💬 Text us</a>
+</div>
+</body>
+</html>
