@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://renov8ers.github.io/sitemap.xml

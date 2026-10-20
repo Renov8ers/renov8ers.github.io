@@ -2,29 +2,23 @@
 
 Live: **https://renov8ers.github.io/**
 
-Static 4-page business site for the user's actual LLC (registered NY, July 2026;
-owned 50/50 by Aaron Sodaro and Ernesto Cordova):
+Static site (GitHub Pages, $0 tooling) for RENOV8ERS LLC. ROI-first: every service shows
+value boost %, estimated $ lift and value per dollar, from the same baseline table as the
+STUMF Renov8ers engine (labelled estimates, never quotes).
 
-- `index.html` — Home: hero, trust strip, services, before/after slider, 3-step process, service area, CTA
-- `services.html` — Masonry & tile, kitchens & baths, siding & insulation, pavers & outdoor living
-- `work.html` — Before/after slider + project gallery (all real crew photos, zero stock)
-- `contact.html` — Call/text cards + estimate form that opens an SMS to (516) 986-8621 with the request pre-written
-- `style.css`, `script.js` — shared design system (charcoal + construction amber, Archivo/Inter)
-- `assets/` — 9 optimized project photos (siding before/after pair, pavers, fireplace, outdoor kitchen)
+- `index.html`: hero ROI card, offers ladder (free estimate, $50 walk-around flagship, the work), ROI explorer, before/after, crew, area, FAQ
+- `services.html`: services with ROI badges, ROI table, bundles, payment planner (12/36/60 mo examples)
+- `roi-check.html`: $50 walk-around landing page with sample 8-card ROI matrix and Stripe checkout
+- `work.html`: before/after slider and gallery with lightbox (real crew photos only)
+- `contact.html`: 4-step estimate questionnaire, posting to the engine (`engine-config.js`), with a one-tap text/email fallback
+- `pay.html`: invoice lookup (`?inv=`) and Stripe pay link; `404.html`, `sitemap.xml`, `robots.txt`
+- `assets/`: real photos (+ WebP), brand mark/icons, `og-banner.png` / `og-card.jpg` share images
 
-Honesty rules baked in: no fake reviews, no license-badge claims (jobs go to
-licensed contractors — implied, never printed), no invented stats or address.
-
-## Publishing
-
-Site source lives here. The live site is published to the `renov8ers` GitHub org
-repo `renov8ers.github.io` (GitHub Pages). Text files push via the GitHub
-connector (`push-files`); the JPEG assets are binary and were uploaded through
-the GitHub web UI (the connector's push path is UTF-8 only).
+Honesty rules baked in: no reviews or testimonials until real ones exist, no license claims, no invented stats,
+no far-zone fee shown, crew phone numbers never shown.
 
 ## Local preview
 
 ```bash
-cd renov8ers-site && python3 -m http.server 8931
-# open http://127.0.0.1:8931/
+python3 -m http.server 8931   # open http://127.0.0.1:8931/
 ```
