@@ -5,5 +5,5 @@
    When none respond, the estimate form falls back to text/email/call with
    the answers prefilled, which still reaches the business line (516) 986-8621. */
 window.R8_ENGINE_URLS = [
-  ""  // STUMF public funnel, e.g. https://<beelink>.<tailnet>.ts.net:8443
+  "https://fedora.vimba-rigel.ts.net:8443"  // STUMF public funnel (kept current by STUMF)
 ];
