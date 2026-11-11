@@ -6,7 +6,7 @@
   var $ = function(id){ return document.getElementById(id); };
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var PHONE_SMS = 'sms:+15169868621?&body=';
-  var EMAIL = 'aaronsodaro@gmail.com';
+  var EMAIL = 'renov8ersllc@gmail.com';
 
   /* ---- ROI baseline: mirrors STUMF renov8ers engine (ROI_CARDS + PRICE_BOOK, 15% margin) ---- */
   var MARGIN = 1.15, PPSF = 385;
