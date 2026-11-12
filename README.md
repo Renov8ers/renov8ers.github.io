@@ -6,13 +6,14 @@ Static site (GitHub Pages, $0 tooling) for RENOV8ERS LLC. ROI-first: every servi
 value boost %, estimated $ lift and value per dollar, from the same baseline table as the
 STUMF Renov8ers engine (labelled estimates, never quotes).
 
-- `index.html`: hero ROI card, offers ladder (free estimate, $50 walk-around flagship, the work), ROI explorer, before/after, crew, area, FAQ
+- `index.html`: full-screen crew photo hero, example estimate slip (value boost, dollar lift, value per $1), before/after, service photo tiles, offers ladder (free estimate, $50 walk-around flagship, the work), ROI explorer, crew and area, steps, FAQ
 - `services.html`: services with ROI badges, ROI table, bundles, payment planner (12/36/60 mo examples)
 - `roi-check.html`: $50 walk-around landing page with sample 8-card ROI matrix and Stripe checkout
 - `work.html`: before/after slider and gallery with lightbox (real crew photos only)
 - `contact.html`: 4-step estimate questionnaire, posting to the engine (`engine-config.js`), with a one-tap text/email fallback
 - `pay.html`: invoice lookup (`?inv=`) and Stripe pay link; `404.html`, `sitemap.xml`, `robots.txt`
 - `assets/`: real photos (+ WebP), brand mark/icons, `og-banner.png` / `og-card.jpg` share images
+- `assets/fonts/`: Inter and Inter Display, self-hosted (SIL Open Font License, see `OFL-Inter.txt`)
 
 Honesty rules baked in: no reviews or testimonials until real ones exist, no license claims, no invented stats,
 no far-zone fee shown, crew phone numbers never shown.
